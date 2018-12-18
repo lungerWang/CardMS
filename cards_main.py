@@ -10,15 +10,12 @@ while True:
     print("You select 【%s】" % action_str)
     if action_str in ["1", "2", "3"]:
         if action_str == "1":
-
             cards_tools.new_card()
 
         elif action_str == "2":
-
-            cards_tools.all_card()
+            cards_tools.show_all_card()
 
         elif action_str == "3":
-
             cards_tools.search_card()
 
     elif action_str == "0":
