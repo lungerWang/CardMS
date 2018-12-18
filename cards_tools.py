@@ -95,11 +95,26 @@ def search_card():
 def deal_card(card_dict):
     action_str = input("请选择要进行的操作：1.修改   2.删除   0.返回上级菜单:")
     if action_str == "1":
-
+        print("请输入新的字段信息，回车表示不修改")
+        card_dict["name"] = input_card_info(card_dict["name"], "name:")
+        card_dict["tel"] = input_card_info(card_dict["tel"], "tel:")
+        card_dict["qq"] = input_card_info(card_dict["qq"], "qq:")
+        card_dict["email"] = input_card_info(card_dict["email"], "email:")
         pass
     elif action_str == "2":
         card_list.remove(card_dict)
         print("删除成功")
 
 
-
+def input_card_info(default, hint):
+    """
+    获取输入信息
+    :param default: 默认值
+    :param hint: 提示信息
+    :return: 如果输入空，则用默认值，不为空则使用输入的值
+    """
+    input_str = input(hint)
+    if len(input_str) == 0:
+        return default
+    else:
+        return input_str
