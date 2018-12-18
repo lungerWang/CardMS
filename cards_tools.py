@@ -17,6 +17,7 @@ def show_selection():
 
 
 def new_card():
+    """创建新名片"""
     print("-" * 50)
     print("new card")
 
@@ -38,6 +39,7 @@ def new_card():
 
 
 def show_all_card():
+    """查看所有名片"""
     # 判断非空
     if len(card_list) == 0:
         print("请先添加名片")
@@ -63,5 +65,6 @@ def show_all_card():
 
 
 def search_card():
+    """查询名片"""
     print("-" * 50)
     print("search card")
