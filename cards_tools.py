@@ -4,6 +4,12 @@ card_list = [{"name": "Micheal", "tel": "213456", "qq": "9123901", "email": "Mic
              ]
 
 
+def print_card_head():
+    """输出表头"""
+    for head in ["姓名", "电话", "QQ", "邮箱"]:
+        print(head, end="\t\t")
+
+
 def show_selection():
     print("*" * 50)
     print("Welcome to 【CardSystem】 V1.0")
@@ -48,9 +54,7 @@ def show_all_card():
     print("-" * 50)
     print("all card")
 
-    # 输出表头
-    for head in ["姓名", "电话", "QQ", "邮箱"]:
-        print(head, end="\t\t")
+    print_card_head()
 
     # 分割线
     print("")
@@ -68,3 +72,20 @@ def search_card():
     """查询名片"""
     print("-" * 50)
     print("search card")
+    # 提示用户输入要查找的名字
+    search_name = input("Pleas input name:")
+
+    # 遍历列表查找
+    for card_dict in card_list:
+        if search_name == card_dict["name"]:
+            print_card_head()
+            # 分割线
+            print("")
+            print("=" * 50)
+            print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
+                                            card_dict["tel"],
+                                            card_dict["qq"],
+                                            card_dict["email"]))
+            break
+    else:
+        print("card not found")
