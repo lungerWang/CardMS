@@ -73,7 +73,7 @@ def search_card():
     print("-" * 50)
     print("search card")
     # 提示用户输入要查找的名字
-    search_name = input("Pleas input name:")
+    search_name = input("Please input name:")
 
     # 遍历列表查找
     for card_dict in card_list:
@@ -86,6 +86,20 @@ def search_card():
                                             card_dict["tel"],
                                             card_dict["qq"],
                                             card_dict["email"]))
+            deal_card(card_dict)
             break
     else:
         print("card not found")
+
+
+def deal_card(card_dict):
+    action_str = input("请选择要进行的操作：1.修改   2.删除   0.返回上级菜单:")
+    if action_str == "1":
+
+        pass
+    elif action_str == "2":
+        card_list.remove(card_dict)
+        print("删除成功")
+
+
+
