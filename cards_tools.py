@@ -1,0 +1,10 @@
+def show_selection():
+    print("*" * 20)
+    print("Welcome to 【CardSystem】 V1.0")
+    print("")
+    print("1.Add card")
+    print("2.Show cards")
+    print("3.Search card")
+    print("")
+    print("0.Exit")
+    print("*" * 20)
